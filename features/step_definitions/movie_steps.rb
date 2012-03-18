@@ -32,3 +32,8 @@ When /I (un)?check the following ratings: (.*)/ do |uncheck, rating_list|
     end
   end
 end
+
+Then /I should see all of the movies$/ do
+  rows = Movie.all.count.to_i
+  rows.should == 10
+end
